@@ -157,4 +157,7 @@ void draw_angle_range7_2p() {
     LCD_DrawArray(pic_tank_7_angle_2p_bmp, x_pos_2p-6, y_pos_2p-17, 20, 20);
     MyLcdTest();  
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8fcb509d5a34a5d116748bd4bc6bb538c00d35f3
