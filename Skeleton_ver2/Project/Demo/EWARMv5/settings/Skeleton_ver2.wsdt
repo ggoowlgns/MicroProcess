@@ -2,50 +2,41 @@
 
 <Workspace>
   <ConfigDictionary>
-    <CurrentConfigs>
-      <Project>Skeleton_ver2/Debug</Project>
-    </CurrentConfigs>
-  </ConfigDictionary>
+    
+  <CurrentConfigs><Project>Skeleton_ver2/Debug</Project></CurrentConfigs></ConfigDictionary>
   <Desktop>
     <Static>
       <Workspace>
         <ColumnWidths>
-          <Column0>244</Column0>
-          <Column1>27</Column1>
-          <Column2>27</Column2>
-          <Column3>27</Column3>
-        </ColumnWidths>
+          
+          
+          
+          
+        <Column0>180</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
       </Workspace>
       <Build>
-        <ColumnWidth0>20</ColumnWidth0>
-        <ColumnWidth1>659</ColumnWidth1>
-        <ColumnWidth2>175</ColumnWidth2>
-        <ColumnWidth3>43</ColumnWidth3>
-      </Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>659</ColumnWidth1><ColumnWidth2>175</ColumnWidth2><ColumnWidth3>43</ColumnWidth3></Build>
     </Static>
     <Windows>
-      <Wnd2>
+      
+      
+    <Wnd2>
         <Tabs>
           <Tab>
             <Identity>TabID-28441-9936</Identity>
             <TabName>Workspace</TabName>
             <Factory>Workspace</Factory>
             <Session>
-<<<<<<< HEAD
               
-            <NodeDict><ExpandedNode>Skeleton_ver2</ExpandedNode><ExpandedNode>Skeleton_ver2/MyFunc</ExpandedNode><ExpandedNode>Skeleton_ver2/MyFunc/MyFunc.c</ExpandedNode><ExpandedNode>Skeleton_ver2/User</ExpandedNode></NodeDict></Session>
-=======
-              <NodeDict>
-                <ExpandedNode>Skeleton_ver2</ExpandedNode>
-                <ExpandedNode>Skeleton_ver2/MyFunc</ExpandedNode>
-              </NodeDict>
-            </Session>
->>>>>>> 7732c3e0fde80057d8f1174c4cd20147d7c71d53
+            <NodeDict><ExpandedNode>Skeleton_ver2</ExpandedNode><ExpandedNode>Skeleton_ver2/CMSIS</ExpandedNode><ExpandedNode>Skeleton_ver2/EWARMv5</ExpandedNode><ExpandedNode>Skeleton_ver2/MyFunc</ExpandedNode></NodeDict></Session>
           </Tab>
         </Tabs>
-        <SelectedTab>0</SelectedTab>
-      </Wnd2>
-      <Wnd3>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3>
         <Tabs>
           <Tab>
             <Identity>TabID-22316-17829</Identity>
@@ -54,169 +45,21 @@
             <Session/>
           </Tab>
         </Tabs>
-        <SelectedTab>0</SelectedTab>
-      </Wnd3>
-    </Windows>
+        
+      <SelectedTab>0</SelectedTab></Wnd3></Windows>
     <Editor>
-<<<<<<< HEAD
       
       
       
       
-    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\..\..\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\arm\doc\infocenter\index.ENU.html</Filename></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MyFunc\MyFunc.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>477</YPos2><SelStart2>9683</SelStart2><SelEnd2>9683</SelEnd2></Tab><ActiveTab>1</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\inc\MyBMP.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>40</XPos2><YPos2>0</YPos2><SelStart2>164211</SelStart2><SelEnd2>164211</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\inc\MyFunc.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>5</YPos2><SelStart2>640</SelStart2><SelEnd2>640</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MyFunc\additional_func.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>24</YPos2><SelStart2>871</SelStart2><SelEnd2>871</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MyFunc\map.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>99</YPos2><SelStart2>429</SelStart2><SelEnd2>429</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\src\stm32f10x_it.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>605</YPos2><SelStart2>12907</SelStart2><SelEnd2>12907</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
-=======
-      <Pane>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\..\..\..\..\..\..\..\..\..\..\..\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\arm\doc\infocenter\index.ENU.html</Filename>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\..\..\..\..\MicroProcess\Skeleton_ver2_integrated (1)\Skeleton_ver2\Project\Demo\MyFunc\map.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>12</YPos2>
-          <SelStart2>632</SelStart2>
-          <SelEnd2>690</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\MyFunc\MyFunc.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>56</YPos2>
-          <SelStart2>1592</SelStart2>
-          <SelEnd2>1592</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\inc\MyBMP.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>1924</YPos2>
-          <SelStart2>170585</SelStart2>
-          <SelEnd2>170585</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\inc\MyFunc.h</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>6</YPos2>
-          <SelStart2>293</SelStart2>
-          <SelEnd2>293</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\MyFunc\additional_func.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>439</YPos2>
-          <SelStart2>248</SelStart2>
-          <SelEnd2>248</SelEnd2>
-        </Tab>
-        <Tab>
-          <Factory>TextEditor</Factory>
-          <Filename>$WS_DIR$\..\MyFunc\map.c</Filename>
-          <XPos>0</XPos>
-          <YPos>0</YPos>
-          <SelStart>0</SelStart>
-          <SelEnd>0</SelEnd>
-          <XPos2>0</XPos2>
-          <YPos2>126</YPos2>
-          <SelStart2>4017</SelStart2>
-          <SelEnd2>4017</SelEnd2>
-        </Tab>
-        <ActiveTab>6</ActiveTab>
-      </Pane>
-      <ActivePane>0</ActivePane>
-      <Sizes>
-        <Pane>
-          <X>1000000</X>
-          <Y>1000000</Y>
-        </Pane>
-      </Sizes>
-      <SplitMode>1</SplitMode>
-    </Editor>
->>>>>>> 7732c3e0fde80057d8f1174c4cd20147d7c71d53
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\..\..\..\..\..\..\..\..\Program Files (x86)\IAR Systems\Embedded Workbench 6.5\arm\doc\infocenter\index.ENU.html</Filename></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MyFunc\MyFunc.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>36</YPos2><SelStart2>6761</SelStart2><SelEnd2>6761</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\inc\MyBMP.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>0</YPos2><SelStart2>12581</SelStart2><SelEnd2>12581</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\inc\MyFunc.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>5</YPos2><SelStart2>0</SelStart2><SelEnd2>0</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MyFunc\additional_func.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>24</YPos2><SelStart2>871</SelStart2><SelEnd2>871</SelEnd2></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\MyFunc\map.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>112</YPos2><SelStart2>2991</SelStart2><SelEnd2>2991</SelEnd2></Tab><ActiveTab>5</ActiveTab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\src\stm32f10x_it.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd><XPos2>0</XPos2><YPos2>605</YPos2><SelStart2>12907</SelStart2><SelEnd2>12907</SelEnd2></Tab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
     <Positions>
-      <Top>
-        <Row0>
-          <Sizes>
-            <Toolbar-03392390>
-              <key>iaridepm.enu1</key>
-            </Toolbar-03392390>
-          </Sizes>
-        </Row0>
-      </Top>
-      <Left>
-        <Row0>
-          <Sizes>
-            <Wnd2>
-              <Rect>
-                <Top>-2</Top>
-                <Left>-2</Left>
-                <Bottom>601</Bottom>
-                <Right>318</Right>
-                <x>-2</x>
-                <y>-2</y>
-                <xscreen>200</xscreen>
-                <yscreen>200</yscreen>
-                <sizeHorzCX>104167</sizeHorzCX>
-                <sizeHorzCY>207684</sizeHorzCY>
-                <sizeVertCX>166667</sizeVertCX>
-                <sizeVertCY>626168</sizeVertCY>
-              </Rect>
-            </Wnd2>
-          </Sizes>
-        </Row0>
-      </Left>
-      <Right>
-        <Row0>
-          <Sizes/>
-        </Row0>
-      </Right>
-      <Bottom>
-        <Row0>
-          <Sizes>
-            <Wnd3>
-              <Rect>
-                <Top>-2</Top>
-                <Left>-2</Left>
-                <Bottom>309</Bottom>
-                <Right>1922</Right>
-                <x>-2</x>
-                <y>-2</y>
-                <xscreen>1924</xscreen>
-                <yscreen>311</yscreen>
-                <sizeHorzCX>1002083</sizeHorzCX>
-                <sizeHorzCY>322949</sizeHorzCY>
-                <sizeVertCX>104167</sizeVertCX>
-                <sizeVertCY>207684</sizeVertCY>
-              </Rect>
-            </Wnd3>
-          </Sizes>
-        </Row0>
-      </Bottom>
-      <Float>
-        <Sizes/>
-      </Float>
-    </Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-056b42d0><key>iaridepm.enu1</key></Toolbar-056b42d0></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>492</Bottom><Right>254</Right><x>-2</x><y>-2</y><xscreen>160</xscreen><yscreen>162</yscreen><sizeHorzCX>104167</sizeHorzCX><sizeHorzCY>207426</sizeHorzCY><sizeVertCX>166667</sizeVertCX><sizeVertCY>632522</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>244</Bottom><Right>1538</Right><x>-2</x><y>-2</y><xscreen>1540</xscreen><yscreen>246</yscreen><sizeHorzCX>1002604</sizeHorzCX><sizeHorzCY>314981</sizeHorzCY><sizeVertCX>104167</sizeVertCX><sizeVertCY>207426</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
   </Desktop>
 </Workspace>
 
