@@ -4,7 +4,7 @@
 #include "myuart.h"
 #include "MyBMP.h"
 #include <math.h>
-
+#include <time.h>
 
 
 int x_pos = 200;
@@ -18,7 +18,7 @@ int y_pos_2p = 80;
 int moveEnd = 0;
 int PowerSelected = 0;
 int RangeSelected = 0;
-
+//float wind;
 int moveEnd_2p = 0;
 int PowerSelected_2p = 0;
 int RangeSelected_2p = 0;
@@ -47,20 +47,18 @@ void gameStart(){
   LCD_Clear(White);
   SPI_FLASH_Init();
   MyJoyStickInterruptInit();
-<<<<<<< HEAD
+
   LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
-  LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
-  
-=======
-  LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 80, 47);
-  LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 80, 47);
+  LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);  
   LCD_DrawArray(pic_hp_100_bmp, 10, 310 , 52, 9);
   LCD_DrawArray(pic_hp_100_bmp, 10, 70, 52, 9);
->>>>>>> db4f5b119abd4b3451557eb353ffd2283b098dbd
+
   
   
   while(1){
     //Player 1
+    //srand((unsigned int ) time(NULL));
+    //wind = (float)(rand % 5 + 1) ;
     move_1p();
     Delay(10);
     
@@ -75,6 +73,7 @@ void gameStart(){
     gameStatus();
     Delay(10);
     
+    ball_clear();
     
     //Player 2
     move_2p();
@@ -86,12 +85,12 @@ void gameStart(){
     vx = (float)v*sin(angle * 3.1415926535897/180.0); // 수직방향으로의 속도
     vy = (float)v*cos(angle * 3.1415926535897/180.0);// 수평방향으로의 속도
     shoot_2p();
-    Delay(30);
+    Delay(10);
     gameStatus();
     Delay(10);
+    ball_clear();
   }
 }
-
 void move_1p(){
   gExNum = (unsigned int)move_1p;
   while(1){
@@ -133,7 +132,7 @@ void darwRange(){
     draw_range1();
     if(PowerSelected==1){
       PowerSelected=0;
-      v = 5;
+      v = 8;
       break;
     }
     Delay(10);
@@ -141,7 +140,7 @@ void darwRange(){
     draw_range2();
     if(PowerSelected==1){
       PowerSelected=0;
-      v = 8;
+      v = 12;
       break;
     }
     Delay(10);
@@ -149,20 +148,12 @@ void darwRange(){
     draw_range3();
     if(PowerSelected==1){
       PowerSelected=0;
-      v = 11;
+      v = 16;
       break;
     }
     Delay(10);
     
     draw_range4();
-    if(PowerSelected==1){
-      PowerSelected=0;
-      v = 15;
-      break;
-    }
-    Delay(10);
-    
-    draw_range5();
     if(PowerSelected==1){
       PowerSelected=0;
       v = 20;
@@ -170,10 +161,18 @@ void darwRange(){
     }
     Delay(10);
     
+    draw_range5();
+    if(PowerSelected==1){
+      PowerSelected=0;
+      v = 25;
+      break;
+    }
+    Delay(10);
+    
     draw_range4();
     if(PowerSelected==1){
       PowerSelected=0;
-      v = 15;
+      v = 20;
       break;
     }
     Delay(10);
@@ -181,7 +180,7 @@ void darwRange(){
     draw_range3();
     if(PowerSelected==1){
       PowerSelected=0;
-      v = 11;
+      v = 16;
       break;
     }
     Delay(10);
@@ -189,7 +188,7 @@ void darwRange(){
     draw_range2();
     if(PowerSelected==1){
       PowerSelected=0;
-      v = 8;
+      v = 12;
       break;
     }
     Delay(10);
@@ -197,7 +196,7 @@ void darwRange(){
     draw_range1();
     if(PowerSelected==1){
       PowerSelected=0;
-      v = 5;
+      v = 8;
       break;
     }
     Delay(10);
@@ -315,63 +314,63 @@ void darwRange_2p(){
     draw_range1_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
-      v = 5;
+      v = 8;
         break;
       }
     Delay(10);
     draw_range2_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
-      v = 8;
+      v = 12;
         break;
       }
     Delay(10);
     draw_range3_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
-      v = 11;
+      v = 16;
         break;
       }
     Delay(10);
     draw_range4_2p();
-    if(PowerSelected_2p==1){
-      PowerSelected_2p=0;
-      v = 15;
-        break;
-      }
-    Delay(10);
-    draw_range5_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
       v = 20;
         break;
       }
     Delay(10);
+    draw_range5_2p();
+    if(PowerSelected_2p==1){
+      PowerSelected_2p=0;
+      v = 25;
+        break;
+      }
+    Delay(10);
     draw_range4_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
-      v = 15;
+      v = 20;
         break;
       }
     Delay(10);
     draw_range3_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
-      v = 11;
+      v = 16;
         break;
       }
     Delay(10);
     draw_range2_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
-      v = 8;
+      v = 12;
         break;
       }
     Delay(10);
     draw_range1_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
-      v = 5;
+      v = 8;
         break;
       }
     Delay(10);
@@ -478,13 +477,13 @@ void darwAngleRange_2p(){
 }
 
 void collision(){
-  LCD_DrawArray(pic_boom_1_bmp,x_pos_ball + 25,y_pos_ball - 25,20,17);
+  LCD_DrawArray(pic_boom_1_bmp,x_pos_ball + 12,y_pos_ball - 12,20,17);
   Delay(10);
-  LCD_DrawArray(pic_boom_2_bmp,x_pos_ball + 25,y_pos_ball - 25,20,17);
+  LCD_DrawArray(pic_boom_2_bmp,x_pos_ball + 12,y_pos_ball - 12,20,17);
   Delay(10);
-  LCD_DrawArray(pic_boom_3_bmp,x_pos_ball + 25,y_pos_ball - 25,20,17);
+  LCD_DrawArray(pic_boom_3_bmp,x_pos_ball + 12,y_pos_ball - 12,20,17);
   Delay(10);
-  LCD_DrawArray(pic_boom_4_bmp,x_pos_ball + 25,y_pos_ball - 25,20,17);
+  LCD_DrawArray(pic_boom_4_bmp,x_pos_ball + 12,y_pos_ball - 12,20,17);
   Delay(10);
 }
 
@@ -493,27 +492,27 @@ void shoot_1p(){
     y_pos_ball = y_pos - 20;
     while(1){
    if(up == 1){
-   x_pos_ball -= (int)vx / 2;
+   x_pos_ball -= (int)vx / 4;
         
-   vx -= 1.0;
+   vx -= 0.5;
    
       }
     else{
-   x_pos_ball += (int) vx / 2;
+   x_pos_ball += (int) vx / 4;
         
-   vx += 1.0;
+   vx += 0.5;
     }
-    y_pos_ball -= (int)vy / 2;
+    y_pos_ball -= (int)vy / 4;
    
-   Delay(5);
-    if(distance(x_pos_2p +20 ,y_pos_2p-18 , x_pos_ball + 25 , y_pos_ball - 25)<=20){
+   Delay(2.5);
+    if(distance(x_pos_2p +20 ,y_pos_2p-18 , x_pos_ball + 12 , y_pos_ball - 12)<=15){
       LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
       up=1;
       p2_hp -= 1;
       collision();
       break;
     }else{
-      LCD_DrawArray(pic_black_ball6_bmp, x_pos_ball, y_pos_ball, 50, 50);
+      LCD_DrawArray(pic_black_ball_bmp, x_pos_ball, y_pos_ball, 25, 25);
     }
     
     if(vx <= 0) up = 0;
@@ -534,30 +533,30 @@ void shoot_2p(){
     y_pos_ball = y_pos_2p + 30;
   while(1){
    if(up == 1){
-   x_pos_ball -= (int)vx / 2;
+   x_pos_ball -= (int)vx / 4;
         
-   vx -= 1.0;
+   vx -= 0.5;
    
       }
    
     else{
-   x_pos_ball += (int) vx / 2;
+   x_pos_ball += (int) vx / 4;
         
-   vx += 1.0;
+   vx += 0.5;
     }
-    y_pos_ball += (int)vy / 2;
+    y_pos_ball += (int)vy / 4;
    
    
-   Delay(5);
+   Delay(2.5);
     
-   if(distance(x_pos+20 ,y_pos -18 , x_pos_ball + 25 , y_pos_ball - 25)<=20){
+   if(distance(x_pos+20 ,y_pos -18 , x_pos_ball + 12 , y_pos_ball - 12)<=15){
       LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
       up = 1;
       p1_hp -= 1;
       collision();
       break;
     }else{
-      LCD_DrawArray(pic_black_ball6_bmp, x_pos_ball, y_pos_ball, 50, 50);
+      LCD_DrawArray(pic_black_ball_bmp, x_pos_ball, y_pos_ball, 25, 25);
     }
     if(vx <= 0) up = 0;
     else if (x_pos_ball + vx >= 239 || y_pos_ball >= 319 || x_pos_ball - vx <= 0 ){
@@ -599,4 +598,9 @@ float distance(int x_tank, int y_tank , int x_ball , int y_ball){
    float y_chai = (float)(y_tank - y_ball);
    float x_chai = (float)(x_tank - x_ball);
    return sqrt((x_chai*x_chai)+(y_chai*y_chai));
+}
+
+void ball_clear(){
+  LCD_DrawArray(pic_ball_cleaner_bmp, x_pos_ball , y_pos_ball, 25 , 25);
+
 }
