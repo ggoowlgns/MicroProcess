@@ -11,23 +11,23 @@ extern int y_pos_2p;
 /**********************************************
 ****************1 Player***********************
 ***********************************************/
-
+/////////////////POWER///////////////////////////////
 void draw_range1() {
-    LCD_DrawArray(pic_range_bar_1_bmp, x_pos, y_pos+20, 14, 24);
+    LCD_DrawArray(pic_range_bar_1_bmp, x_pos, y_pos, 14, 24);
     MyLcdTest();  
     //Uart_SendString(string);
 }
 
 
 void draw_range2() {
-    LCD_DrawArray(pic_range_bar_2_bmp, x_pos, y_pos+20, 14, 24);
+    LCD_DrawArray(pic_range_bar_2_bmp, x_pos, y_pos, 14, 24);
     MyLcdTest();  
     //Uart_SendString(string);
 }
 
 
 void draw_range3() {
-    LCD_DrawArray(pic_range_bar_3_bmp, x_pos, y_pos+20, 14, 24);
+    LCD_DrawArray(pic_range_bar_3_bmp, x_pos, y_pos, 14, 24);
     MyLcdTest();  
     
     
@@ -36,7 +36,7 @@ void draw_range3() {
 
 
 void draw_range4() {
-    LCD_DrawArray(pic_range_bar_4_bmp, x_pos, y_pos+20, 14, 24);
+    LCD_DrawArray(pic_range_bar_4_bmp, x_pos, y_pos, 14, 24);
     MyLcdTest();  
     
     
@@ -45,7 +45,7 @@ void draw_range4() {
 
 
 void draw_range5() {
-    LCD_DrawArray(pic_range_bar_5_bmp, x_pos, y_pos+20, 14, 24);
+    LCD_DrawArray(pic_range_bar_5_bmp, x_pos, y_pos, 14, 24);
     MyLcdTest();  
     //Uart_SendString(string);
 }
@@ -94,21 +94,21 @@ void draw_angle_range7() {
 /**********************************************
 ****************2 Player***********************
 ***********************************************/
-
+//////////////////////POWER/////////////////////
 void draw_range1_2p() {
-    LCD_DrawArray(pic_range_bar_1_bmp, x_pos_2p, y_pos_2p-70, 14, 24);
+    LCD_DrawArray(pic_range_bar_1_bmp, x_pos_2p, y_pos_2p-26, 14, 24);
     MyLcdTest();  
 }
 
 
 void draw_range2_2p() {
-    LCD_DrawArray(pic_range_bar_2_bmp, x_pos_2p, y_pos_2p-70 , 14, 24);
+    LCD_DrawArray(pic_range_bar_2_bmp, x_pos_2p, y_pos_2p-26 , 14, 24);
     MyLcdTest();  
 }
 
 
 void draw_range3_2p() {
-    LCD_DrawArray(pic_range_bar_3_bmp, x_pos_2p, y_pos_2p-70, 14, 24);
+    LCD_DrawArray(pic_range_bar_3_bmp, x_pos_2p, y_pos_2p-26, 14, 24);
     MyLcdTest();  
     
     
@@ -116,14 +116,14 @@ void draw_range3_2p() {
 
 
 void draw_range4_2p() {
-    LCD_DrawArray(pic_range_bar_4_bmp,x_pos_2p, y_pos_2p-70, 14, 24);
+    LCD_DrawArray(pic_range_bar_4_bmp,x_pos_2p, y_pos_2p-26, 14, 24);
     MyLcdTest();  
     
 }
 
 
 void draw_range5_2p() {
-    LCD_DrawArray(pic_range_bar_5_bmp, x_pos_2p, y_pos_2p -70, 14, 24);
+    LCD_DrawArray(pic_range_bar_5_bmp, x_pos_2p, y_pos_2p -26, 14, 24);
     MyLcdTest();  
 }
 
