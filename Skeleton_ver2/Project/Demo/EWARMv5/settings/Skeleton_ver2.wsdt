@@ -35,6 +35,7 @@
                 <ExpandedNode>Skeleton_ver2</ExpandedNode>
                 <ExpandedNode>Skeleton_ver2/MyFunc</ExpandedNode>
                 <ExpandedNode>Skeleton_ver2/MyFunc/MyFunc.c</ExpandedNode>
+                <ExpandedNode>Skeleton_ver2/Output</ExpandedNode>
               </NodeDict>
             </Session>
           </Tab>
@@ -67,9 +68,9 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>18</YPos2>
-          <SelStart2>929</SelStart2>
-          <SelEnd2>929</SelEnd2>
+          <YPos2>12</YPos2>
+          <SelStart2>632</SelStart2>
+          <SelEnd2>690</SelEnd2>
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
@@ -79,10 +80,11 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>30</YPos2>
-          <SelStart2>788</SelStart2>
-          <SelEnd2>788</SelEnd2>
+          <YPos2>460</YPos2>
+          <SelStart2>8945</SelStart2>
+          <SelEnd2>8945</SelEnd2>
         </Tab>
+        <ActiveTab>2</ActiveTab>
         <Tab>
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\..\inc\MyBMP.h</Filename>
@@ -90,10 +92,10 @@
           <YPos>0</YPos>
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
-          <XPos2>40</XPos2>
-          <YPos2>1873</YPos2>
-          <SelStart2>164211</SelStart2>
-          <SelEnd2>164211</SelEnd2>
+          <XPos2>0</XPos2>
+          <YPos2>1924</YPos2>
+          <SelStart2>170585</SelStart2>
+          <SelEnd2>170585</SelEnd2>
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
@@ -103,9 +105,9 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>5</YPos2>
-          <SelStart2>640</SelStart2>
-          <SelEnd2>640</SelEnd2>
+          <YPos2>6</YPos2>
+          <SelStart2>293</SelStart2>
+          <SelEnd2>293</SelEnd2>
         </Tab>
         <Tab>
           <Factory>TextEditor</Factory>
@@ -115,11 +117,10 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>24</YPos2>
-          <SelStart2>871</SelStart2>
-          <SelEnd2>871</SelEnd2>
+          <YPos2>439</YPos2>
+          <SelStart2>248</SelStart2>
+          <SelEnd2>248</SelEnd2>
         </Tab>
-        <ActiveTab>5</ActiveTab>
       </Pane>
       <ActivePane>0</ActivePane>
       <Sizes>
@@ -147,7 +148,7 @@
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
-                <Bottom>712</Bottom>
+                <Bottom>601</Bottom>
                 <Right>318</Right>
                 <x>-2</x>
                 <y>-2</y>
@@ -156,7 +157,7 @@
                 <sizeHorzCX>104167</sizeHorzCX>
                 <sizeHorzCY>207684</sizeHorzCY>
                 <sizeVertCX>166667</sizeVertCX>
-                <sizeVertCY>741433</sizeVertCY>
+                <sizeVertCY>626168</sizeVertCY>
               </Rect>
             </Wnd1>
           </Sizes>
@@ -174,14 +175,14 @@
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
-                <Bottom>198</Bottom>
+                <Bottom>309</Bottom>
                 <Right>1922</Right>
                 <x>-2</x>
                 <y>-2</y>
                 <xscreen>1924</xscreen>
-                <yscreen>200</yscreen>
+                <yscreen>311</yscreen>
                 <sizeHorzCX>1002083</sizeHorzCX>
-                <sizeHorzCY>207684</sizeHorzCY>
+                <sizeHorzCY>322949</sizeHorzCY>
                 <sizeVertCX>104167</sizeVertCX>
                 <sizeVertCY>207684</sizeVertCY>
               </Rect>

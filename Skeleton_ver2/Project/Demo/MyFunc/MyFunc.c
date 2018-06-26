@@ -439,6 +439,17 @@ void darwAngleRange_2p(){
   
 }
 
+void collision(){
+  LCD_DrawArray(pic_boom_1_bmp,x_pos_ball,y_pos_ball,20,17);
+  Delay(10);
+  LCD_DrawArray(pic_boom_2_bmp,x_pos_ball,y_pos_ball,20,17);
+  Delay(10);
+  LCD_DrawArray(pic_boom_3_bmp,x_pos_ball,y_pos_ball,20,17);
+  Delay(10);
+  LCD_DrawArray(pic_boom_4_bmp,x_pos_ball,y_pos_ball,20,17);
+  Delay(10);
+}
+
 void shoot_1p(){
     x_pos_ball = x_pos - 30;
     y_pos_ball = y_pos -60;
@@ -456,16 +467,29 @@ void shoot_1p(){
     }
     y_pos_ball -= vy;
     if(vx <= 0) up = 0;
-    else if (x_pos_ball + vx >= 239 || y_pos_ball - 2*vy<= 0 || x_pos_ball - vx <= 0 ){ 
+    else if (x_pos_ball + vx >= 239 || y_pos_ball - 2*vy<= 0 || x_pos_ball - vx <= 0 ){ //¸Ê¹ÛÀ¸·Î ³ª°¬À»¶§ 
       
       up = 1;
       break;
     }
-    LCD_DrawArray(pic_black_ball6_bmp, x_pos_ball, y_pos_ball, 50, 50);
-    Delay(10);
     
+    Delay(10);
+    if(distance(x_pos_2p +23 ,y_pos_2p-40 , x_pos_ball , y_pos_ball)<=40){
+      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 80, 47);
+      collision();
+      break;
+    }else{
+      LCD_DrawArray(pic_black_ball6_bmp, x_pos_ball, y_pos_ball, 50, 50);
+    }
   }
 }
+
+float distance(int x_tank, int y_tank , int x_ball , int y_ball){
+   float y_chai = (float)(y_tank - y_ball);
+   float x_chai = (float)(x_tank - x_ball);
+   return sqrt((x_chai*x_chai)+(y_chai*y_chai));
+}
+
 
 void shoot_2p(){
   
