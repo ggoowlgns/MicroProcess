@@ -509,11 +509,6 @@ void shoot_1p(){
   }
 }
 
-float distance(int x_tank, int y_tank , int x_ball , int y_ball){
-   float y_chai = (float)(y_tank - y_ball);
-   float x_chai = (float)(x_tank - x_ball);
-   return sqrt((x_chai*x_chai)+(y_chai*y_chai));
-}
 
 
 void shoot_2p(){
@@ -538,8 +533,21 @@ void shoot_2p(){
       up = 1;
       break;
     }
-    LCD_DrawArray(pic_black_ball6_bmp, x_pos_ball, y_pos_ball, 50, 50);
-    Delay(10);
     
+    Delay(10);
+    if(distance(x_pos+23 ,y_pos+40 , x_pos_ball , y_pos_ball)<=40){
+      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 80, 47);
+      collision();
+      break;
+    }else{
+      LCD_DrawArray(pic_black_ball6_bmp, x_pos_ball, y_pos_ball, 50, 50);
+    }
   }
+}
+
+
+float distance(int x_tank, int y_tank , int x_ball , int y_ball){
+   float y_chai = (float)(y_tank - y_ball);
+   float x_chai = (float)(x_tank - x_ball);
+   return sqrt((x_chai*x_chai)+(y_chai*y_chai));
 }
