@@ -78,10 +78,11 @@
           <SelStart>0</SelStart>
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
-          <YPos2>56</YPos2>
-          <SelStart2>1592</SelStart2>
-          <SelEnd2>1592</SelEnd2>
+          <YPos2>477</YPos2>
+          <SelStart2>9510</SelStart2>
+          <SelEnd2>9510</SelEnd2>
         </Tab>
+        <ActiveTab>2</ActiveTab>
         <Tab>
           <Factory>TextEditor</Factory>
           <Filename>$WS_DIR$\..\inc\MyBMP.h</Filename>
@@ -127,10 +128,9 @@
           <SelEnd>0</SelEnd>
           <XPos2>0</XPos2>
           <YPos2>126</YPos2>
-          <SelStart2>4017</SelStart2>
-          <SelEnd2>4017</SelEnd2>
+          <SelStart2>3730</SelStart2>
+          <SelEnd2>3730</SelEnd2>
         </Tab>
-        <ActiveTab>6</ActiveTab>
       </Pane>
       <ActivePane>0</ActivePane>
       <Sizes>
@@ -158,7 +158,7 @@
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
-                <Bottom>601</Bottom>
+                <Bottom>665</Bottom>
                 <Right>318</Right>
                 <x>-2</x>
                 <y>-2</y>
@@ -167,7 +167,7 @@
                 <sizeHorzCX>104167</sizeHorzCX>
                 <sizeHorzCY>207684</sizeHorzCY>
                 <sizeVertCX>166667</sizeVertCX>
-                <sizeVertCY>626168</sizeVertCY>
+                <sizeVertCY>692627</sizeVertCY>
               </Rect>
             </Wnd2>
           </Sizes>
@@ -185,14 +185,14 @@
               <Rect>
                 <Top>-2</Top>
                 <Left>-2</Left>
-                <Bottom>309</Bottom>
+                <Bottom>245</Bottom>
                 <Right>1922</Right>
                 <x>-2</x>
                 <y>-2</y>
                 <xscreen>1924</xscreen>
-                <yscreen>311</yscreen>
+                <yscreen>247</yscreen>
                 <sizeHorzCX>1002083</sizeHorzCX>
-                <sizeHorzCY>322949</sizeHorzCY>
+                <sizeHorzCY>256490</sizeHorzCY>
                 <sizeVertCX>104167</sizeVertCX>
                 <sizeVertCY>207684</sizeVertCY>
               </Rect>
