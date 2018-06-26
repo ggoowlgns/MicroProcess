@@ -11,6 +11,7 @@ extern unsigned int xPos_, yPos_;
 
 void obstacle(unsigned int px);
 
+extern void gameStatus();
 extern float distance();
 extern void collision();
 extern void shoot_2p();
