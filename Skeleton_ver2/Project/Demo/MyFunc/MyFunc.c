@@ -45,8 +45,8 @@ void gameStart(){
   LCD_Clear(White);
   SPI_FLASH_Init();
   MyJoyStickInterruptInit();
-  LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 80, 47);
-  LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 80, 47);
+  LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
+  LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
   
   
   
@@ -83,7 +83,7 @@ void move_1p(){
   gExNum = (unsigned int)move_1p;
   while(1){
     MyLcdTest();
-    LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 80, 47);
+    LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
     
     
     if(moveEnd==1){
@@ -100,7 +100,7 @@ void move_2p(){
   gExNum = (unsigned int)move_2p;
   while(1){
     MyLcdTest();
-    LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 80, 47);
+    LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
     
     
     if(moveEnd_2p==1){
@@ -494,7 +494,7 @@ void shoot_1p(){
    
    Delay(10);
     if(distance(x_pos_2p +23 ,y_pos_2p-40 , x_pos_ball , y_pos_ball)<=40){
-      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 80, 47);
+      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
       up=1;
       collision();
       break;
@@ -537,7 +537,7 @@ void shoot_2p(){
    Delay(10);
     
    if(distance(x_pos+23 ,y_pos , x_pos_ball , y_pos_ball)<=40){
-      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 80, 47);
+      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
       up = 1;
       collision();
       break;
