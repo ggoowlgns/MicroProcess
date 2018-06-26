@@ -11,7 +11,11 @@ extern unsigned int xPos_, yPos_;
 
 void obstacle(unsigned int px);
 
+extern void ball_clear();
+
+
 extern void draw_blook();
+
 extern void gameStatus();
 extern float distance();
 extern void collision();
