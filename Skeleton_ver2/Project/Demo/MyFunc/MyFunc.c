@@ -554,7 +554,7 @@ void shoot_1p(){
       p2_hp -= 1;
       collision();
       break;
-    }else{
+    }else else{
       LCD_DrawArray(pic_black_ball6_bmp, x_pos_ball, y_pos_ball, 50, 50);
     }
     
