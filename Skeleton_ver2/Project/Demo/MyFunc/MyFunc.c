@@ -48,10 +48,16 @@ void gameStart(){
   LCD_Clear(White);
   SPI_FLASH_Init();
   MyJoyStickInterruptInit();
+<<<<<<< HEAD
+  LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
+  LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
+  
+=======
   LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 80, 47);
   LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 80, 47);
   LCD_DrawArray(pic_hp_100_bmp, 10, 310 , 52, 9);
   LCD_DrawArray(pic_hp_100_bmp, 10, 70, 52, 9);
+>>>>>>> db4f5b119abd4b3451557eb353ffd2283b098dbd
   
   
   
@@ -102,7 +108,7 @@ void move_1p(){
   gExNum = (unsigned int)move_1p;
   while(1){
     MyLcdTest();
-    LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 80, 47);
+    LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
     
     
     if(moveEnd==1){
@@ -119,7 +125,7 @@ void move_2p(){
   gExNum = (unsigned int)move_2p;
   while(1){
     MyLcdTest();
-    LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 80, 47);
+    LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
     
     
     if(moveEnd_2p==1){
@@ -484,33 +490,34 @@ void darwAngleRange_2p(){
 }
 
 void collision(){
-  LCD_DrawArray(pic_boom_1_bmp,x_pos_ball,y_pos_ball,20,17);
+  LCD_DrawArray(pic_boom_1_bmp,x_pos_ball + 25,y_pos_ball - 25,20,17);
   Delay(10);
-  LCD_DrawArray(pic_boom_2_bmp,x_pos_ball,y_pos_ball,20,17);
+  LCD_DrawArray(pic_boom_2_bmp,x_pos_ball + 25,y_pos_ball - 25,20,17);
   Delay(10);
-  LCD_DrawArray(pic_boom_3_bmp,x_pos_ball,y_pos_ball,20,17);
+  LCD_DrawArray(pic_boom_3_bmp,x_pos_ball + 25,y_pos_ball - 25,20,17);
   Delay(10);
-  LCD_DrawArray(pic_boom_4_bmp,x_pos_ball,y_pos_ball,20,17);
+  LCD_DrawArray(pic_boom_4_bmp,x_pos_ball + 25,y_pos_ball - 25,20,17);
   Delay(10);
 }
 
 void shoot_1p(){
     x_pos_ball = x_pos - 30;
-    y_pos_ball = y_pos -60;
+    y_pos_ball = y_pos - 20;
     while(1){
    if(up == 1){
-   x_pos_ball -= (int)vx;
+   x_pos_ball -= (int)vx / 2;
         
-   vx -= 2.0;
+   vx -= 1.0;
    
       }
     else{
-   x_pos_ball += (int) vx;
+   x_pos_ball += (int) vx / 2;
         
-   vx += 2.0;
+   vx += 1.0;
     }
-    y_pos_ball -= vy;
+    y_pos_ball -= (int)vy / 2;
    
+<<<<<<< HEAD
    Delay(10);
    if(turn >=3){
      if(distance(214 ,180 , x_pos_ball , y_pos_ball)<=25){
@@ -537,6 +544,11 @@ void shoot_1p(){
    
     if(distance(x_pos_2p +23 ,y_pos_2p-40 , x_pos_ball , y_pos_ball)<=40){
       LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 80, 47);
+=======
+   Delay(5);
+    if(distance(x_pos_2p +20 ,y_pos_2p-18 , x_pos_ball + 25 , y_pos_ball - 25)<=20){
+      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
+>>>>>>> c1a31dbacf15a13762c7b2c314c7cb687b07a844
       up=1;
       p2_hp -= 1;
       collision();
@@ -546,7 +558,7 @@ void shoot_1p(){
     }
     
     if(vx <= 0) up = 0;
-    else if (x_pos_ball + vx >= 239 || y_pos_ball - 2*vy<= 0 || x_pos_ball - vx <= 0 ){ //¸Ê¹ÛÀ¸·Î ³ª°¬À»¶§ 
+    else if (x_pos_ball + vx >= 239 || y_pos_ball - vy<= 0 || x_pos_ball - vx <= 0 ){ //¸Ê¹ÛÀ¸·Î ³ª°¬À»¶§ 
       
       up = 1;
       break;
@@ -560,27 +572,34 @@ void shoot_1p(){
 
 void shoot_2p(){
     x_pos_ball = x_pos_2p - 30;
-    y_pos_ball = y_pos_2p + 10;
+    y_pos_ball = y_pos_2p + 30;
   while(1){
    if(up == 1){
-   x_pos_ball -= (int)vx;
+   x_pos_ball -= (int)vx / 2;
         
-   vx -= 2.0;
+   vx -= 1.0;
    
       }
    
     else{
-   x_pos_ball += (int) vx;
+   x_pos_ball += (int) vx / 2;
         
-   vx += 2.0;
+   vx += 1.0;
     }
-    y_pos_ball += vy;
+    y_pos_ball += (int)vy / 2;
    
    
+<<<<<<< HEAD
    Delay(10);
    
    if(distance(x_pos+23 ,y_pos , x_pos_ball , y_pos_ball)<=40){
       LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 80, 47);
+=======
+   Delay(5);
+    
+   if(distance(x_pos+20 ,y_pos -18 , x_pos_ball + 25 , y_pos_ball - 25)<=20){
+      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
+>>>>>>> c1a31dbacf15a13762c7b2c314c7cb687b07a844
       up = 1;
       p1_hp -= 1;
       collision();
@@ -597,7 +616,7 @@ void shoot_2p(){
    
    
     if(vx <= 0) up = 0;
-    else if (x_pos_ball + vx >= 239 || y_pos_ball + 2*vy>= 319 || x_pos_ball - vx <= 0 ){
+    else if (x_pos_ball + vx >= 239 || y_pos_ball >= 319 || x_pos_ball - vx <= 0 ){
       
       up = 1;
       break;
