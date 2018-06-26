@@ -38,7 +38,8 @@ float vx ;      //수직방향 속도
 float vy ;      //수평방향 속도
 
 char str[] ;
-
+char str2[];
+char str3[];
 int up = 1;     //위로 올라가는지 상태
 
 float angle = 60.0;     //각도
@@ -92,10 +93,15 @@ void gameStart(){
     shoot_1p(); // 1p shoot
     ball_clear();
     Delay(10);
+    ball_clear();
+    Delay(10);
     gameStatus();
     Delay(10);
     
+<<<<<<< HEAD
    
+=======
+>>>>>>> 725688ca87c84f6cff23ce2347abb1ef767c3c83
     
     draw_blook();
     Delay(10);
@@ -110,6 +116,8 @@ void gameStart(){
     vx = (float)v*sin(angle * 3.1415926535897/180.0); // 수직방향으로의 속도
     vy = (float)v*cos(angle * 3.1415926535897/180.0);// 수평방향으로의 속도
     shoot_2p();
+    ball_clear();
+    Delay(10);
     ball_clear();
     Delay(10);
     gameStatus();
@@ -570,12 +578,23 @@ void shoot_1p(){
    
     if(distance(x_pos_2p +20 ,y_pos_2p-18 , x_pos_ball + 12 , y_pos_ball - 12)<=15){
     
-      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
+      
       up=1;
       p2_hp -= 1;
       collision();
+      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
       break;
-    }else{
+    
+    }else if(distance(x_pos +20 ,y_pos-18 , x_pos_ball + 12 , y_pos_ball - 12)<=15){// 1p 맞음 (자폭)
+    
+      
+      up=1;
+      p1_hp -= 1;
+      collision();
+      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
+      break;
+    
+    } else{
       LCD_DrawArray(pic_black_ball_bmp, x_pos_ball, y_pos_ball, 25, 25);
     }
     
@@ -646,11 +665,21 @@ void shoot_2p(){
 
     
    if(distance(x_pos+20 ,y_pos -18 , x_pos_ball + 12 , y_pos_ball - 12)<=15){
-      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
+      
       up = 1;
       p1_hp -= 1;
       collision();
+      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
       break;
+    }else if(distance(x_pos_2p +20 ,y_pos_2p-18 , x_pos_ball + 12 , y_pos_ball - 12)<=15){
+    
+      
+      up=1;
+      p2_hp -= 1;
+      collision();
+      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
+      break;
+    
     }else{
       LCD_DrawArray(pic_black_ball_bmp, x_pos_ball, y_pos_ball, 25, 25);
     }
@@ -668,7 +697,11 @@ void shoot_2p(){
 }
 
 void gameStatus(){
-  
+      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
+      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
+      
+      LCD_DisplayStringLine(40,str);
+      
   if(p1_hp == 2){
     LCD_DrawArray(pic_hp_70_bmp, 10, 310 , 52, 9);
   }
@@ -677,6 +710,10 @@ void gameStatus(){
   }
   else if(p1_hp == 0){
     LCD_DrawArray(pic_hp_0_bmp, 10, 310 , 52, 9);
+    sprintf(str3 ,"2P WIN");
+    
+    LCD_DisplayStringLine(60,str3);
+    while(1);
   }
   
   if(p2_hp == 2){
@@ -687,7 +724,14 @@ void gameStatus(){
   }
   else if(p2_hp == 0){
     LCD_DrawArray(pic_hp_0_bmp, 10, 70 , 52, 9);
+    sprintf(str3 ,"1P WIN");
+    
+    LCD_DisplayStringLine(60,str3);
+    while(1);
+    
   }
+  
+      
   
 }
 
