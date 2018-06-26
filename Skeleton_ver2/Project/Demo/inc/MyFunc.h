@@ -10,7 +10,12 @@ extern unsigned int clockCounter;
 extern unsigned int xPos_, yPos_;
 
 void obstacle(unsigned int px);
+<<<<<<< HEAD
 extern void ball_clear();
+=======
+
+extern void draw_blook();
+>>>>>>> ed3a8a4b8a6b43635e7bbc1b8bb0ef50ebe1f7b1
 extern void gameStatus();
 extern float distance();
 extern void collision();
