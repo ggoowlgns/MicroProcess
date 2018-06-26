@@ -5,7 +5,10 @@
     <path>$WS_DIR$\Skeleton_ver2.ewp</path>
   </project>
   <project>
-    <path>$WS_DIR$\..\..\..\..\..\MicroProcess\Skeleton_ver2\Project\Demo\EWARMv5\Skeleton_ver2.ewp</path>
+    <path>$WS_DIR$\..\..\..\..\..\..\..\Desktop\Jun\Lectures\MicroProcessor\TeamProject\Skeleton_ver2_integrated (1)\Skeleton_ver2\Project\Demo\EWARMv5\Skeleton_ver2.ewp</path>
+  </project>
+  <project>
+    <path>$WS_DIR$\..\..\..\..\..\..\..\Desktop\MICROP~1\Skeleton_ver2\Project\Demo\EWARMv5\Skeleton_ver2.ewp</path>
   </project>
   <batchBuild/>
 </workspace>

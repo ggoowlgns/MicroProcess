@@ -90,11 +90,12 @@ void gameStart(){
     vx = (float)v*sin(angle * 3.1415926535897/180.0); // 수직방향으로의 속도
     vy = (float)v*cos(angle * 3.1415926535897/180.0);// 수평방향으로의 속도
     shoot_1p(); // 1p shoot
+    ball_clear();
     Delay(10);
     gameStatus();
     Delay(10);
     
-    ball_clear();
+   
     
     draw_blook();
     Delay(10);
@@ -109,11 +110,12 @@ void gameStart(){
     vx = (float)v*sin(angle * 3.1415926535897/180.0); // 수직방향으로의 속도
     vy = (float)v*cos(angle * 3.1415926535897/180.0);// 수평방향으로의 속도
     shoot_2p();
+    ball_clear();
     Delay(10);
     gameStatus();
     Delay(10);
 
-    ball_clear();
+    
 
     
     turn +=1;
@@ -506,6 +508,9 @@ void darwAngleRange_2p(){
 }
 
 void collision(){
+  SPI_FLASH_Init();
+  WavePlayer_Init(SpeechReadAddr + 0x10000);
+  WavePlayer_Start();
   LCD_DrawArray(pic_boom_1_bmp,x_pos_ball + 12,y_pos_ball - 12,20,17);
   Delay(10);
   LCD_DrawArray(pic_boom_2_bmp,x_pos_ball + 12,y_pos_ball - 12,20,17);
@@ -517,6 +522,10 @@ void collision(){
 }
 
 void shoot_1p(){
+    //gExNum = (unsigned int)shoot_1p;
+    SPI_FLASH_Init();
+    WavePlayer_Init(SpeechReadAddr + 0x20000);
+    WavePlayer_Start();
     x_pos_ball = x_pos - 30;
     y_pos_ball = y_pos - 20;
     while(1){
@@ -571,7 +580,7 @@ void shoot_1p(){
     }
     
     if(vx <= 0) up = 0;
-    else if (x_pos_ball + vx >= 239 || y_pos_ball - vy<= 0 || x_pos_ball - vx <= 0 ){ //맵밖으로 나갔을때 
+    else if (x_pos_ball + vx >= 239 || y_pos_ball - vy<= 0 || x_pos_ball - vx <= 0  || y_pos_ball - vy >= 319){ //맵밖으로 나갔을때 
       
       up = 1;
       break;
@@ -584,6 +593,9 @@ void shoot_1p(){
 
 
 void shoot_2p(){
+    SPI_FLASH_Init();
+    WavePlayer_Init(SpeechReadAddr + 0x20000);
+    WavePlayer_Start();
     x_pos_ball = x_pos_2p - 30;
     y_pos_ball = y_pos_2p + 30;
   while(1){
@@ -645,7 +657,7 @@ void shoot_2p(){
    
    
     if(vx <= 0) up = 0;
-    else if (x_pos_ball + vx >= 239 || y_pos_ball >= 319 || x_pos_ball - vx <= 0 ){
+    else if (x_pos_ball + vx >= 239 || y_pos_ball >= 319 || x_pos_ball - vx <= 0 || y_pos_ball + vy<= 0){
       
       up = 1;
       break;

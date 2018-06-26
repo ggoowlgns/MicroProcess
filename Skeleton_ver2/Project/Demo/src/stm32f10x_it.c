@@ -624,6 +624,12 @@ void EXTI15_10_IRQHandler(void)
                   moveEnd_2p= 1;
    
 	}
+        /*else if ((gExNum == (unsigned int)shoot_1p)  || (gExNum == (unsigned int)shoot_2p)){
+           SPI_FLASH_Init();
+           WavePlayer_Stop();
+           WavePlayer_Init(SpeechReadAddr);
+           WavePlayer_Start();
+        }*/
 
 }
 
