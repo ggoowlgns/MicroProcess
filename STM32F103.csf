@@ -75,9 +75,9 @@ DELeteBreak %ALL
 
 
 
-LoadWindows "C:\Users\JiHoon\Desktop\JH\3-1\Micro Processor\cv2_2\Skeleton_ver2_integrated (1)\demo.sw"
-d.load.binary "C:\Users\JiHoon\Desktop\JH\3-1\Micro Processor\cv2_2\Skeleton_ver2_integrated (1)\Skeleton_ver2\Project\Demo\EWARMv5\Debug\Exe\Skeleton_ver2.bin" 0x08000000
-d.load.elf "C:\Users\JiHoon\Desktop\JH\3-1\Micro Processor\cv2_2\Skeleton_ver2_integrated (1)\Skeleton_ver2\Project\Demo\EWARMv5\Debug\Exe\Skeleton_ver2.out" /nocode
+LoadWindows "C:\Users\jy016\Documents\GitHub\MicroProcess\demo.sw"
+d.load.binary "C:\Users\jy016\Documents\GitHub\MicroProcess\Skeleton_ver2\Project\Demo\EWARMv5\Debug\Exe\Skeleton_ver2.bin" 0x08000000
+d.load.elf "C:\Users\jy016\Documents\GitHub\MicroProcess\Skeleton_ver2\Project\Demo\EWARMv5\Debug\Exe\Skeleton_ver2.out" /nocode
  
 r.s r13 d.l(SD:0x08000000)
 r.s	r14  0xFFFFFFFF

@@ -393,12 +393,15 @@ void EXTI0_IRQHandler(void)
         {
           if (gExti[0] == 1)
             //gColor = Green;
-            y_pos -= 5;
+            if (y_pos <= 220)
+              y_pos = 220;
+            else y_pos -= 5;
         }else if (gExNum == (unsigned int)move_2p)
         {
           if (gExti[0] == 1)
             //gColor = Green;
-            y_pos_2p -= 5;
+            if (y_pos_2p <= 50) y_pos_2p = 50;
+            else y_pos_2p -= 5;
         }
 }
 
@@ -424,13 +427,14 @@ void EXTI1_IRQHandler(void)
         if (gExNum == (unsigned int)move_1p)
         {
           if (gExti[1] == 1)
-            //gColor = Green;
-            y_pos += 5;
+            if (y_pos >= 300) y_pos = 300;  
+            else y_pos += 5;
         }else if (gExNum == (unsigned int)move_2p)
         {
           if (gExti[1] == 1)
             //gColor = Green;
-            y_pos_2p += 5;
+            if (y_pos_2p >= 140) y_pos_2p = 140;
+            else y_pos_2p += 5;
         }
 }
 

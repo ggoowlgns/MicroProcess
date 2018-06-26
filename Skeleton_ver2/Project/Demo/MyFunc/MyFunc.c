@@ -24,7 +24,7 @@ int y_pos_2p = 80;
 int moveEnd = 0;
 int PowerSelected = 0;
 int RangeSelected = 0;
-//float wind;
+
 int moveEnd_2p = 0;
 int PowerSelected_2p = 0;
 int RangeSelected_2p = 0;
@@ -75,7 +75,7 @@ void gameStart(){
     wind = -0.5 + (float)random/1000;
     sprintf(str , "Wind  : %.3f" , wind);
     LCD_DisplayStringLine(40,str);
-    draw_blook();
+    if(turn <= 4) draw_blook();
     Delay(10);
     
     //Player 1
@@ -98,15 +98,18 @@ void gameStart(){
     gameStatus();
     Delay(10);
     
-<<<<<<< HEAD
-   
-=======
->>>>>>> 725688ca87c84f6cff23ce2347abb1ef767c3c83
     
-    draw_blook();
+    if(turn <= 4) draw_blook();
     Delay(10);
     
+    
     //Player 2
+    
+    random = rand()%1000;
+    wind = -0.5 + (float)random/1000;
+    sprintf(str , "Wind  : %.3f" , wind);
+    LCD_DisplayStringLine(40,str);
+    
     move_2p();
     Delay(10);
     darwRange_2p();
@@ -553,7 +556,7 @@ void shoot_1p(){
    
    Delay(2.5);
       
-   if(turn >=3){
+   if(turn ==3){
      if(distance(214 ,180 , x_pos_ball , y_pos_ball)<=25){
       up=1;
       collision();
@@ -639,7 +642,7 @@ void shoot_2p(){
 
    
 
-   if(turn >=3){
+   if(turn ==3){
      if(distance(214 ,180 , x_pos_ball , y_pos_ball)<=25){
       up=1;
       collision();
