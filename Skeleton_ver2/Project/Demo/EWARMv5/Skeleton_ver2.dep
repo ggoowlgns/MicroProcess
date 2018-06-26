@@ -227,6 +227,7 @@
       <file>$PROJ_DIR$\..\src\usb_desc.c</file>
       <file>$PROJ_DIR$\..\src\waveplayer.c</file>
       <file>$PROJ_DIR$\..\src\memory.c</file>
+      <file>$PROJ_DIR$\..\..\..\..\..\MicroProcess\Skeleton_ver2_integrated (1)\Skeleton_ver2\Project\Demo\MyFunc\map.c</file>
     </outputs>
     <file>
       <name>[ROOT_NODE]</name>
@@ -504,6 +505,10 @@
         </tool>
       </outputs>
       <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 26 18 25 27 19 20 21 22 23 24 33 48 39 28 55 45 31 49 56 59 36 40 41 34 32 29 43 51 58 57 47 35 30 37 46 50 42 38 52 44 53 54 73 68 69 66 63 67 74 75 76 70 77 60 72 64 61 202 65 71 62</file>
+        </tool>
         <tool>
           <name>ICCARM</name>
           <file> 26 18 25 27 19 20 21 22 23 24 33 48 39 28 55 45 31 49 56 59 36 40 41 34 32 29 43 51 58 57 47 35 30 37 46 50 42 38 52 44 53 54 73 68 69 66 63 67 74 75 76 70 77 60 72 64 61 202 65 71 62</file>
