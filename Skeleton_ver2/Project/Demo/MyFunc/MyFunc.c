@@ -91,10 +91,11 @@ void gameStart(){
     vy = (float)v*cos(angle * 3.1415926535897/180.0);// 수평방향으로의 속도
     shoot_1p(); // 1p shoot
     Delay(10);
+    ball_clear();
+    Delay(10);
     gameStatus();
     Delay(10);
     
-    ball_clear();
     
     draw_blook();
     Delay(10);
@@ -110,10 +111,12 @@ void gameStart(){
     vy = (float)v*cos(angle * 3.1415926535897/180.0);// 수평방향으로의 속도
     shoot_2p();
     Delay(10);
+    ball_clear();
+    Delay(10);
     gameStatus();
     Delay(10);
 
-    ball_clear();
+    
 
     
     turn +=1;
@@ -561,18 +564,24 @@ void shoot_1p(){
    
     if(distance(x_pos_2p +20 ,y_pos_2p-18 , x_pos_ball + 12 , y_pos_ball - 12)<=15){
     
-      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
+      
       up=1;
       p2_hp -= 1;
       collision();
+      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
       break;
-<<<<<<< HEAD
-    }else else{
-      LCD_DrawArray(pic_black_ball6_bmp, x_pos_ball, y_pos_ball, 50, 50);
-=======
-    }else{
+    
+    }else if(distance(x_pos +20 ,y_pos-18 , x_pos_ball + 12 , y_pos_ball - 12)<=15){// 1p 맞음 (자폭)
+    
+      
+      up=1;
+      p1_hp -= 1;
+      collision();
+      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
+      break;
+    
+    } else{
       LCD_DrawArray(pic_black_ball_bmp, x_pos_ball, y_pos_ball, 25, 25);
->>>>>>> 4a1a1caef95ddf187f1ed311c5e509f89a1523af
     }
     
     if(vx <= 0) up = 0;
@@ -639,11 +648,21 @@ void shoot_2p(){
 
     
    if(distance(x_pos+20 ,y_pos -18 , x_pos_ball + 12 , y_pos_ball - 12)<=15){
-      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
+      
       up = 1;
       p1_hp -= 1;
       collision();
+      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
       break;
+    }else if(distance(x_pos_2p +20 ,y_pos_2p-18 , x_pos_ball + 12 , y_pos_ball - 12)<=15){
+    
+      
+      up=1;
+      p2_hp -= 1;
+      collision();
+      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
+      break;
+    
     }else{
       LCD_DrawArray(pic_black_ball_bmp, x_pos_ball, y_pos_ball, 25, 25);
     }
@@ -681,6 +700,11 @@ void gameStatus(){
   else if(p2_hp == 0){
     LCD_DrawArray(pic_hp_0_bmp, 10, 70 , 52, 9);
   }
+  
+      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
+      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
+      
+      LCD_DisplayStringLine(40,str);
   
 }
 
