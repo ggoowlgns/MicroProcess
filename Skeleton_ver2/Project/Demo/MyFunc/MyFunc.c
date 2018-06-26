@@ -23,7 +23,7 @@ int PowerSelected_2p = 0;
 int RangeSelected_2p = 0;
 
 
-int v = 10;     //초기속력
+int v = 20;     //초기속력
 float vx ;      //수직방향 속도
 float vy ;      //수평방향 속도
 
@@ -51,25 +51,28 @@ void gameStart(){
   
   
   while(1){
+    //Player 1
     move_1p();
     Delay(10);
     
-    darwRange();    
+    darwRange();    //power gauge
     Delay(10);
-    darwAngleRange();
+    darwAngleRange(); //set angle
     Delay(10);
-    vx = (float)v*sin(angle * 3.1415926535897/180.0);
-    vy = (float)v*cos(angle * 3.1415926535897/180.0);
-    shoot_1p();
+    vx = (float)v*sin(angle * 3.1415926535897/180.0); // 수직방향으로의 속도
+    vy = (float)v*cos(angle * 3.1415926535897/180.0);// 수평방향으로의 속도
+    shoot_1p(); // 1p shoot
     Delay(10);
     
-    
+    //Player 2
     move_2p();
     Delay(10);
     darwRange_2p();
     Delay(10);
     darwAngleRange_2p();
-    Delay(30);
+    Delay(10);
+    vx = (float)v*sin(angle * 3.1415926535897/180.0); // 수직방향으로의 속도
+    vy = (float)v*cos(angle * 3.1415926535897/180.0);// 수평방향으로의 속도
     shoot_2p();
     Delay(30);
     
@@ -299,54 +302,63 @@ void darwRange_2p(){
     draw_range1_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
+      v = 5;
         break;
       }
     Delay(10);
     draw_range2_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
+      v = 8;
         break;
       }
     Delay(10);
     draw_range3_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
+      v = 11;
         break;
       }
     Delay(10);
     draw_range4_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
+      v = 15;
         break;
       }
     Delay(10);
     draw_range5_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
+      v = 20;
         break;
       }
     Delay(10);
     draw_range4_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
+      v = 15;
         break;
       }
     Delay(10);
     draw_range3_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
+      v = 11;
         break;
       }
     Delay(10);
     draw_range2_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
+      v = 8;
         break;
       }
     Delay(10);
     draw_range1_2p();
     if(PowerSelected_2p==1){
       PowerSelected_2p=0;
+      v = 5;
         break;
       }
     Delay(10);
@@ -360,78 +372,91 @@ void darwAngleRange_2p(){
     draw_angle_range1_2p();
     if(RangeSelected_2p ==1 ){
       RangeSelected_2p =0;
+      angle = 0;
        break;
     }
     Delay(10);
     draw_angle_range2_2p();
     if(RangeSelected_2p ==1 ){
       RangeSelected_2p =0;
+      angle = 10;
        break;
     }
     Delay(10);
     draw_angle_range3_2p();
     if(RangeSelected_2p ==1 ){
       RangeSelected_2p =0;
+      angle = 30;
        break;
     }
     Delay(10);
     draw_angle_range4_2p();
     if(RangeSelected_2p ==1 ){
       RangeSelected_2p =0;
+      angle = 45;
        break;
     }
     Delay(10);
     draw_angle_range5_2p();
     if(RangeSelected_2p ==1 ){
       RangeSelected_2p =0;
+      angle = 55;
        break;
     }
     Delay(10);
     draw_angle_range6_2p();
     if(RangeSelected_2p ==1 ){
       RangeSelected_2p =0;
+      angle = 65;
        break;
     }
     Delay(10);
     draw_angle_range7_2p();
     if(RangeSelected_2p ==1 ){
       RangeSelected_2p =0;
+      angle = 75;
        break;
     }
     Delay(10);
     draw_angle_range6_2p();
     if(RangeSelected_2p ==1 ){
       RangeSelected_2p =0;
+      angle = 65;
        break;
     }
     Delay(10);
     draw_angle_range5_2p();
     if(RangeSelected_2p ==1 ){
       RangeSelected_2p =0;
+      angle = 55;
        break;
     }
     Delay(10);
     draw_angle_range4_2p();
     if(RangeSelected_2p ==1 ){
       RangeSelected_2p =0;
+      angle = 45;
        break;
     }
     Delay(10);
     draw_angle_range3_2p();
     if(RangeSelected_2p ==1 ){
       RangeSelected_2p =0;
+      angle = 30;
        break;
     }
     Delay(10);
     draw_angle_range2_2p();
     if(RangeSelected_2p ==1 ){
       RangeSelected_2p =0;
+      angle = 10;
        break;
     }
     Delay(10);
     draw_angle_range1_2p();
     if(RangeSelected_2p ==1 ){
       RangeSelected_2p =0;
+      angle = 0;
        break;
     }
     Delay(10);
@@ -468,5 +493,29 @@ void shoot_1p(){
 }
 
 void shoot_2p(){
-  
+    x_pos_ball = x_pos_2p - 30;
+    y_pos_ball = y_pos_2p + 10;
+    while(1){
+   if(up == 1){
+   x_pos_ball -= (int)vx;
+        
+   vx -= 2.0;
+   
+      }
+    else{
+   x_pos_ball += (int) vx;
+        
+   vx += 2.0;
+    }
+    y_pos_ball += vy;
+    if(vx <= 0) up = 0;
+    else if (x_pos_ball + vx >= 239 || y_pos_ball + 2*vy>= 319 || x_pos_ball - vx <= 0 ){ 
+      
+      up = 1;
+      break;
+    }
+    LCD_DrawArray(pic_black_ball6_bmp, x_pos_ball, y_pos_ball, 50, 50);
+    Delay(10);
+    
+  }
 }

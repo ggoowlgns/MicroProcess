@@ -945,7 +945,7 @@
       <name>$PROJ_DIR$\..\MyFunc\additional_func.c</name>
     </file>
     <file>
-      <name>$PROJ_DIR$\..\..\..\..\..\MicroProcess\Skeleton_ver2_integrated (1)\Skeleton_ver2\Project\Demo\MyFunc\map.c</name>
+      <name>$PROJ_DIR$\..\MyFunc\map.c</name>
     </file>
     <file>
       <name>$PROJ_DIR$\..\MyFunc\MyFunc.c</name>
