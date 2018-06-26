@@ -4,15 +4,14 @@
 #include "myuart.h"
 #include "MyBMP.h"
 #include <math.h>
-<<<<<<< HEAD
+
 #include <time.h>
 
-=======
+
 #include <stdlib.h>
-#include <time.h>
+
 
 float wind ;
->>>>>>> ed3a8a4b8a6b43635e7bbc1b8bb0ef50ebe1f7b1
 
 int x_pos = 200;
 int y_pos = 300;
@@ -57,7 +56,7 @@ void gameStart(){
   STM3210B_LCD_Init();
   LCD_Clear(White);
   SPI_FLASH_Init();
-<<<<<<< HEAD
+
   MyJoyStickInterruptInit();
 
   LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
@@ -65,16 +64,7 @@ void gameStart(){
   LCD_DrawArray(pic_hp_100_bmp, 10, 310 , 52, 9);
   LCD_DrawArray(pic_hp_100_bmp, 10, 70, 52, 9);
 
-=======
-  MyJoyStickInterruptInit(); //Joystick ¼±¾ð
-  LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
-  LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
-  
-  LCD_DrawArray(pic_hp_100_bmp, 10, 310 , 52, 9);
-  LCD_DrawArray(pic_hp_100_bmp, 10, 70, 52, 9);
-  
-  
->>>>>>> ed3a8a4b8a6b43635e7bbc1b8bb0ef50ebe1f7b1
+
   
   
   while(1){
@@ -122,12 +112,12 @@ void gameStart(){
     Delay(10);
     gameStatus();
     Delay(10);
-<<<<<<< HEAD
+
     ball_clear();
-=======
+
     
     turn +=1;
->>>>>>> ed3a8a4b8a6b43635e7bbc1b8bb0ef50ebe1f7b1
+
   }
 }
 void move_1p(){
@@ -541,16 +531,11 @@ void shoot_1p(){
         
    vx += 0.5;
     }
-<<<<<<< HEAD
+    vy +=  wind;
     y_pos_ball -= (int)vy / 4;
    
    Delay(2.5);
-    if(distance(x_pos_2p +20 ,y_pos_2p-18 , x_pos_ball + 12 , y_pos_ball - 12)<=15){
-=======
-   vy +=  wind;
-    y_pos_ball -= (int)vy / 2;
-   
-   Delay(5);
+      
    if(turn >=3){
      if(distance(214 ,180 , x_pos_ball , y_pos_ball)<=25){
       up=1;
@@ -574,9 +559,8 @@ void shoot_1p(){
    }
    
    
+    if(distance(x_pos_2p +20 ,y_pos_2p-18 , x_pos_ball + 12 , y_pos_ball - 12)<=15){
     
-    if(distance(x_pos_2p +20 ,y_pos_2p-18 , x_pos_ball + 25 , y_pos_ball - 25)<=20){
->>>>>>> ed3a8a4b8a6b43635e7bbc1b8bb0ef50ebe1f7b1
       LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
       up=1;
       p2_hp -= 1;
@@ -615,17 +599,15 @@ void shoot_2p(){
         
    vx += 0.5;
     }
-<<<<<<< HEAD
+
+    vy -=  wind;
     y_pos_ball += (int)vy / 4;
    
    
    Delay(2.5);
-=======
-   vy -=  wind;
-    y_pos_ball += (int)vy / 2;
+
    
-   
-   Delay(5);
+
    if(turn >=3){
      if(distance(214 ,180 , x_pos_ball , y_pos_ball)<=25){
       up=1;
@@ -649,7 +631,7 @@ void shoot_2p(){
    }
    
    
->>>>>>> ed3a8a4b8a6b43635e7bbc1b8bb0ef50ebe1f7b1
+
     
    if(distance(x_pos+20 ,y_pos -18 , x_pos_ball + 12 , y_pos_ball - 12)<=15){
       LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
@@ -704,12 +686,12 @@ float distance(int x_tank, int y_tank , int x_ball , int y_ball){
    return sqrt((x_chai*x_chai)+(y_chai*y_chai));
 }
 
-<<<<<<< HEAD
+
 void ball_clear(){
   LCD_DrawArray(pic_ball_cleaner_bmp, x_pos_ball , y_pos_ball, 25 , 25);
 
 }
-=======
+
 /*********************************************
 ********************BLOOK*********************
 **********************************************/
@@ -761,5 +743,3 @@ void draw_blook(){
     LCD_DrawArray(pic_blook_white_bmp, 189, 195, 70, 10);
   }
 }
-
->>>>>>> ed3a8a4b8a6b43635e7bbc1b8bb0ef50ebe1f7b1
