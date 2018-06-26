@@ -4,7 +4,10 @@
 #include "myuart.h"
 #include "MyBMP.h"
 #include <math.h>
+#include <stdlib.h>
+#include <time.h>
 
+float wind ;
 
 int x_pos = 200;
 int y_pos = 300;
@@ -30,6 +33,8 @@ int v = 20;     //초기속력
 float vx ;      //수직방향 속도
 float vy ;      //수평방향 속도
 
+char str[] ;
+
 int up = 1;     //위로 올라가는지 상태
 
 float angle = 60.0;     //각도
@@ -47,23 +52,23 @@ void gameStart(){
   STM3210B_LCD_Init();
   LCD_Clear(White);
   SPI_FLASH_Init();
-  MyJoyStickInterruptInit();
-<<<<<<< HEAD
+  MyJoyStickInterruptInit(); //Joystick 선언
   LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
   LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
   
-=======
-  LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 80, 47);
-  LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 80, 47);
   LCD_DrawArray(pic_hp_100_bmp, 10, 310 , 52, 9);
   LCD_DrawArray(pic_hp_100_bmp, 10, 70, 52, 9);
->>>>>>> db4f5b119abd4b3451557eb353ffd2283b098dbd
   
   
   
   
   while(1){
+    //srand(time(NULL));
     
+    int random = rand()%1000;
+    wind = -0.5 + (float)random/1000;
+    sprintf(str , "Wind  : %.3f" , wind);
+    LCD_DisplayStringLine(40,str);
     draw_blook();
     Delay(10);
     
@@ -515,10 +520,10 @@ void shoot_1p(){
         
    vx += 1.0;
     }
+   vy +=  wind;
     y_pos_ball -= (int)vy / 2;
    
-<<<<<<< HEAD
-   Delay(10);
+   Delay(5);
    if(turn >=3){
      if(distance(214 ,180 , x_pos_ball , y_pos_ball)<=25){
       up=1;
@@ -542,13 +547,9 @@ void shoot_1p(){
    }
    
    
-    if(distance(x_pos_2p +23 ,y_pos_2p-40 , x_pos_ball , y_pos_ball)<=40){
-      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 80, 47);
-=======
-   Delay(5);
+    
     if(distance(x_pos_2p +20 ,y_pos_2p-18 , x_pos_ball + 25 , y_pos_ball - 25)<=20){
       LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
->>>>>>> c1a31dbacf15a13762c7b2c314c7cb687b07a844
       up=1;
       p2_hp -= 1;
       collision();
@@ -586,31 +587,42 @@ void shoot_2p(){
         
    vx += 1.0;
     }
+   vy -=  wind;
     y_pos_ball += (int)vy / 2;
    
    
-<<<<<<< HEAD
-   Delay(10);
-   
-   if(distance(x_pos+23 ,y_pos , x_pos_ball , y_pos_ball)<=40){
-      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 80, 47);
-=======
    Delay(5);
+   if(turn >=3){
+     if(distance(214 ,180 , x_pos_ball , y_pos_ball)<=25){
+      up=1;
+      collision();
+      break;
+    }
+   }
+   if(turn ==2){
+     if((distance(164 ,180 , x_pos_ball , y_pos_ball)<=25)||(distance(214 ,180 , x_pos_ball , y_pos_ball)<=25)){
+      up=1;
+      collision();
+      break;
+    }
+   }
+   if(turn ==1){
+     if((distance(114 ,180 , x_pos_ball , y_pos_ball)<=25)||(distance(164 ,180 , x_pos_ball , y_pos_ball)<=25)||(distance(214 ,180 , x_pos_ball , y_pos_ball)<=25)){
+      up=1;
+      collision();
+      break;
+    }
+   }
+   
+   
     
    if(distance(x_pos+20 ,y_pos -18 , x_pos_ball + 25 , y_pos_ball - 25)<=20){
       LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
->>>>>>> c1a31dbacf15a13762c7b2c314c7cb687b07a844
       up = 1;
       p1_hp -= 1;
       collision();
       break;
-    }else if(distance(x_pos+23 ,y_pos , x_pos_ball , y_pos_ball)<=40){
-      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 80, 47);
-      up = 1;
-      p1_hp -= 1;
-      collision();
-      break;
-    } else{
+    }else{
       LCD_DrawArray(pic_black_ball6_bmp, x_pos_ball, y_pos_ball, 50, 50);
     }
    
@@ -664,48 +676,48 @@ float distance(int x_tank, int y_tank , int x_ball , int y_ball){
 void draw_blook(){
   
   ////////////////////turn 3///////////////////////////
-  LCD_DrawArray(pic_blook_bmp, 229, 170, 40, 10);
-  LCD_DrawArray(pic_blook_bmp, 219, 170, 40, 10);
-  LCD_DrawArray(pic_blook_bmp, 209, 170, 40, 10);
-  LCD_DrawArray(pic_blook_bmp, 199, 170, 40, 10);
-  LCD_DrawArray(pic_blook_bmp, 189, 170, 40, 10);
+  LCD_DrawArray(pic_blook_bmp, 229, 195, 70, 10);
+  LCD_DrawArray(pic_blook_bmp, 219, 195, 70, 10);
+  LCD_DrawArray(pic_blook_bmp, 209, 195, 70, 10);
+  LCD_DrawArray(pic_blook_bmp, 199, 195, 70, 10);
+  LCD_DrawArray(pic_blook_bmp, 189, 195, 70, 10);
   
   
   ////////////////////turn 2///////////////////////////
-  LCD_DrawArray(pic_blook_bmp, 179, 170, 40, 10);
-  LCD_DrawArray(pic_blook_bmp, 169, 170, 40, 10);
-  LCD_DrawArray(pic_blook_bmp, 159, 170, 40, 10);
-  LCD_DrawArray(pic_blook_bmp, 149, 170, 40, 10);
-  LCD_DrawArray(pic_blook_bmp, 139, 170, 40, 10);
+  LCD_DrawArray(pic_blook_bmp, 179, 195, 70, 10);
+  LCD_DrawArray(pic_blook_bmp, 169, 195, 70, 10);
+  LCD_DrawArray(pic_blook_bmp, 159, 195, 70, 10);
+  LCD_DrawArray(pic_blook_bmp, 149, 195, 70, 10);
+  LCD_DrawArray(pic_blook_bmp, 139, 195, 70, 10);
   
   
   
   ////////////////////turn 1///////////////////////////
-  LCD_DrawArray(pic_blook_bmp, 129, 170, 40, 10);
-  LCD_DrawArray(pic_blook_bmp, 119, 170, 40, 10);
-  LCD_DrawArray(pic_blook_bmp, 109, 170, 40, 10);
-  LCD_DrawArray(pic_blook_bmp, 99, 170, 40, 10);
-  LCD_DrawArray(pic_blook_bmp, 89, 170, 40, 10);
+  LCD_DrawArray(pic_blook_bmp, 129, 195, 70, 10);
+  LCD_DrawArray(pic_blook_bmp, 119, 195, 70, 10);
+  LCD_DrawArray(pic_blook_bmp, 109, 195, 70, 10);
+  LCD_DrawArray(pic_blook_bmp, 99, 195, 70, 10);
+  LCD_DrawArray(pic_blook_bmp, 89, 195, 70, 10);
   if(turn >1){
-    LCD_DrawArray(pic_blook_white_bmp, 129, 170, 40, 10);
-    LCD_DrawArray(pic_blook_white_bmp, 119, 170, 40, 10);
-    LCD_DrawArray(pic_blook_white_bmp, 109, 170, 40, 10);
-    LCD_DrawArray(pic_blook_white_bmp, 99, 170, 40, 10);
-    LCD_DrawArray(pic_blook_white_bmp, 89, 170, 40, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 129, 195, 70, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 119, 195, 70, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 109, 195, 70, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 99, 195, 70, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 89, 195, 70, 10);
   }
   if(turn >2){
-    LCD_DrawArray(pic_blook_white_bmp, 179, 170, 40, 10);
-    LCD_DrawArray(pic_blook_white_bmp, 169, 170, 40, 10);
-    LCD_DrawArray(pic_blook_white_bmp, 159, 170, 40, 10);
-    LCD_DrawArray(pic_blook_white_bmp, 149, 170, 40, 10);
-    LCD_DrawArray(pic_blook_white_bmp, 139, 170, 40, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 179, 195, 70, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 169, 195, 70, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 159, 195, 70, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 149, 195, 70, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 139, 195, 70, 10);
   }
   if(turn>3){
-    LCD_DrawArray(pic_blook_white_bmp, 229, 170, 40, 10);
-    LCD_DrawArray(pic_blook_white_bmp, 219, 170, 40, 10);
-    LCD_DrawArray(pic_blook_white_bmp, 209, 170, 40, 10);
-    LCD_DrawArray(pic_blook_white_bmp, 199, 170, 40, 10);
-    LCD_DrawArray(pic_blook_white_bmp, 189, 170, 40, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 229, 195, 70, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 219, 195, 70, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 209, 195, 70, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 199, 195, 70, 10);
+    LCD_DrawArray(pic_blook_white_bmp, 189, 195, 70, 10);
   }
 }
 

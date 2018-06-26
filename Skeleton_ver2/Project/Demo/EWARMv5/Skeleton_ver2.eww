@@ -4,6 +4,9 @@
   <project>
     <path>$WS_DIR$\Skeleton_ver2.ewp</path>
   </project>
+  <project>
+    <path>$WS_DIR$\..\..\..\..\..\MicroProcess\Skeleton_ver2\Project\Demo\EWARMv5\Skeleton_ver2.ewp</path>
+  </project>
   <batchBuild/>
 </workspace>
 
