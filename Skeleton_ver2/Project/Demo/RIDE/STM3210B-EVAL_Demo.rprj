@@ -1,0 +1,4 @@
+
+<Project Header="Project 'STM3210B-EVAL_Demo'" Path=".\STM3210B-EVAL_Demo.rprj" Project="Yes" OutputFile="" sate="96" ActiveApp="STM3210B-EVAL_Demo" >
+	<ApplicationBuild Header="STM3210B-EVAL_Demo" Extern=".\STM3210B-EVAL_Demo.rapp" Path=".\STM3210B-EVAL_Demo.rapp" OutputFile=".\obj\STM3210B-EVAL_Demo.elf" sate="98" />
+</Project>

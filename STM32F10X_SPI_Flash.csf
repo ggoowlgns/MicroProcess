@@ -1,0 +1,84 @@
+;============================================================================
+;  Name:
+;    STM32F10X-SPI_Flash.csf
+;
+;  Description:
+;    Script file of J&D Tech CodeViser for STM32F10X-128K-EVAL Serial Flash
+;
+;  Execution:
+;    Modify the command line load file.elf(axf) to load the file that you want.
+;    For more details, refer to SCP.txt file that accompanies this.
+;
+; Copyright (c) 2009~2010 by J&D Tech, Incorporated.  All Rights Reserved.
+;----------------------------------------------------------------------------
+;============================================================================
+;
+;                        EDIT HISTORY FOR MODULE
+;
+;
+; when          who      what, where, why
+; -------       ---      ----------------------------------------------------
+; 02/02/2010    Joshua     initial release
+; 03/06/2010    pottery    Modify for SPI Serial Flash
+;============================================================================;
+
+AREA
+AREA.Clear
+
+print "Start STM32F103 Initialization..."
+
+wait 100.ms
+
+; 1. System Setting
+DisConnect
+CPUTYPE 							CORTEXM3
+OPTION.JTAGCLOCK 					10.000000Mhz
+OPTION.EnReset 						ON
+OPTION.TRST							ON
+OPTION.CR 							OFF
+OPTION.BigEndian 					OFF
+OPTION.RTCK							OFF
+OPTION.DACR							OFF
+OPTION.BigEndian					OFF
+OPTION.PCZero						OFF
+MULtiCore.INDEX 					2
+MULtiCore.IRPOST					5
+MULtiCore.DRPOST					1
+MULtiCore.IRPRE						0
+MULtiCore.DRPRE						0
+
+print "System setting complete..."
+WAIT 100.ms
+
+; 2. Falsh Memory & Debugger Setting
+CFlash.Download 					ON
+CFlash.UserOption 					ON
+CFlash.UserFilePath  				"STM32_SPI_FlashLoader.axf"
+CFlash.ERASEtype 					AUTO
+CFlash.Base 						0x00000000
+CFlash.Size 						0x00800000
+CFlash.RamBase 						0x20000000
+CFlash.RamSize 						0x00005000
+CFlash.BLANKCheck					OFF
+CFlash.Verify						OFF
+
+DEBUG.DownloaBuffer					0x1000
+
+print "Flash Memory & Debugger setting complete..."
+WAIT 100.ms
+
+; 3. Syste Connect
+Connect
+;LoadIMAGE "C:\STM32F10x_Demo.elf"
+
+print
+print "1. To Download binary or BMP on Flash memory"
+print "  Use [Program] -> [Download Binary/HEX File] menu."
+print "  Select binary file to download on target system"
+print "  and set for download addrss..."
+print
+print "2. To Dump binary from Flash memory"
+print "  Use [Program] -> [Save Memory to File] menu."
+print "  Input filename, set Address and Length to dump and"
+print "  select memory type to NAND."
+

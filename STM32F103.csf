@@ -1,0 +1,90 @@
+;**************************************************************
+;	 CodeViser Script for STM32F10X-128K-EVAL
+;
+;				          Copyright(C) 2010, J&D Tech. co, LTD
+;**************************************************************
+
+AREA
+AREA.Clear
+
+DisConnect
+
+print "Start STM32F10X Initialization..."
+
+wait 100.ms
+
+; 1. System Setting
+OPTION.Reset
+
+OPTION.EnReset						ON
+OPTION.TRST							ON
+OPTION.ResBreak						OFF
+OPTION.WaitReset					OFF
+OPTION.WaitResetTime				100ms
+OPTION.CR							OFF
+OPTION.RTCK							OFF
+OPTION.DACR							OFF
+OPTION.BigEndian					OFF
+OPTION.PCZero						OFF
+OPTION.JTAGCLOCK					10MHz
+
+CPUTYPE								CortexM3
+
+MULtiCore.IRPOST 					5
+MULtiCore.DRPost 					1
+MULtiCore.IRPRE 					0
+MULtiCore.DRPre 					0
+
+print "System setting complete..."
+WAIT 100.ms
+
+; 2. Falsh Memory Setting
+CFlash.DownLoad						ON
+CFlash.ERASEtype					AUTO
+;CFlash.DataWidth					W16
+CFLash.Base							0x08000000
+CFlash.Size							0x00020000
+CFlash.RamBase						0x20000000
+CFlash.BufferSize					0x00005000
+CFlash.BLANKCheck					OFF
+CFlash.Verify						OFF
+CFlash.UserOption					ON
+CFlash.UserFilePath ".\STM32_FlashLoader.axf"
+FSLASHBuffSize 						0x1000
+
+print "Flash setting complete..."
+WAIT 100.ms
+
+; 3. Debugger Setting
+DEBUG.INIT
+
+DEBUG.InternallyUsedHWBreakpoint	ON
+DEBUG.LoadAsysncMode				ON
+DEBUG.ShowDebugWindowTop			ON
+DEBUG.ShowOutPutWindow				ON
+DEBUG.ShowSourceLineInCallStack		ON
+DEBUG.HideDebugWindow				OFF
+
+print "Debugger setting complete..."
+WAIT 100.ms
+
+; 4. System Start / Download Binary
+connect
+
+DELeteBreak %ALL
+
+
+
+LoadWindows "C:\Users\JiHoon\Desktop\JH\3-1\Micro Processor\cv2_2\Skeleton_ver2_integrated (1)\demo.sw"
+d.load.binary "C:\Users\JiHoon\Desktop\JH\3-1\Micro Processor\cv2_2\Skeleton_ver2_integrated (1)\Skeleton_ver2\Project\Demo\EWARMv5\Debug\Exe\Skeleton_ver2.bin" 0x08000000
+d.load.elf "C:\Users\JiHoon\Desktop\JH\3-1\Micro Processor\cv2_2\Skeleton_ver2_integrated (1)\Skeleton_ver2\Project\Demo\EWARMv5\Debug\Exe\Skeleton_ver2.out" /nocode
+ 
+r.s r13 d.l(SD:0x08000000)
+r.s	r14  0xFFFFFFFF
+r.s pc d.l(SD:0x08000004)
+d.s 0xE000ED08 %LONG 0x08000000 
+
+;SetBREAK	MyTest	%HW
+;SetBREAK	MyLcdTest	%HW
+GO
+
