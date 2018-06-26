@@ -6,6 +6,7 @@
 #include <math.h>
 
 
+
 int x_pos = 200;
 int y_pos = 300;
 int x_pos_ball;
@@ -21,7 +22,8 @@ int RangeSelected = 0;
 int moveEnd_2p = 0;
 int PowerSelected_2p = 0;
 int RangeSelected_2p = 0;
-
+int p1_hp = 3;
+int p2_hp = 3;
 
 int v = 20;     //초기속력
 float vx ;      //수직방향 속도
@@ -45,9 +47,16 @@ void gameStart(){
   LCD_Clear(White);
   SPI_FLASH_Init();
   MyJoyStickInterruptInit();
+<<<<<<< HEAD
   LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
   LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
   
+=======
+  LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 80, 47);
+  LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 80, 47);
+  LCD_DrawArray(pic_hp_100_bmp, 10, 310 , 52, 9);
+  LCD_DrawArray(pic_hp_100_bmp, 10, 70, 52, 9);
+>>>>>>> db4f5b119abd4b3451557eb353ffd2283b098dbd
   
   
   while(1){
@@ -63,6 +72,9 @@ void gameStart(){
     vy = (float)v*cos(angle * 3.1415926535897/180.0);// 수평방향으로의 속도
     shoot_1p(); // 1p shoot
     Delay(10);
+    gameStatus();
+    Delay(10);
+    
     
     //Player 2
     move_2p();
@@ -75,7 +87,8 @@ void gameStart(){
     vy = (float)v*cos(angle * 3.1415926535897/180.0);// 수평방향으로의 속도
     shoot_2p();
     Delay(30);
-    
+    gameStatus();
+    Delay(10);
   }
 }
 
@@ -496,6 +509,7 @@ void shoot_1p(){
     if(distance(x_pos_2p +20 ,y_pos_2p-18 , x_pos_ball + 25 , y_pos_ball - 25)<=20){
       LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
       up=1;
+      p2_hp -= 1;
       collision();
       break;
     }else{
@@ -539,6 +553,7 @@ void shoot_2p(){
    if(distance(x_pos+20 ,y_pos -18 , x_pos_ball + 25 , y_pos_ball - 25)<=20){
       LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
       up = 1;
+      p1_hp -= 1;
       collision();
       break;
     }else{
@@ -553,6 +568,30 @@ void shoot_2p(){
     
     
   }
+}
+
+void gameStatus(){
+  
+  if(p1_hp == 2){
+    LCD_DrawArray(pic_hp_70_bmp, 10, 310 , 52, 9);
+  }
+  else if(p1_hp == 1){
+    LCD_DrawArray(pic_hp_30_bmp, 10, 310 , 52, 9);
+  }
+  else if(p1_hp == 0){
+    LCD_DrawArray(pic_hp_0_bmp, 10, 310 , 52, 9);
+  }
+  
+  if(p2_hp == 2){
+    LCD_DrawArray(pic_hp_70_bmp, 10, 70 , 52, 9);
+  }
+  else if(p2_hp == 1){
+    LCD_DrawArray(pic_hp_30_bmp, 10, 70 , 52, 9);
+  }
+  else if(p2_hp == 0){
+    LCD_DrawArray(pic_hp_0_bmp, 10, 70 , 52, 9);
+  }
+  
 }
 
 
