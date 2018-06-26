@@ -530,6 +530,8 @@ void collision(){
   Delay(10);
   LCD_DrawArray(pic_boom_4_bmp,x_pos_ball + 12,y_pos_ball - 12,20,17);
   Delay(10);
+  LCD_DrawArray(pic_ball_cleaner_bmp, x_pos_ball + 12,y_pos_ball - 12, 25 , 25);
+  
 }
 
 void shoot_1p(){
