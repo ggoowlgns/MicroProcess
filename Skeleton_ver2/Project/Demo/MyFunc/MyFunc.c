@@ -38,7 +38,8 @@ float vx ;      //수직방향 속도
 float vy ;      //수평방향 속도
 
 char str[] ;
-
+char str2[];
+char str3[];
 int up = 1;     //위로 올라가는지 상태
 
 float angle = 60.0;     //각도
@@ -680,7 +681,11 @@ void shoot_2p(){
 }
 
 void gameStatus(){
-  
+      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
+      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
+      
+      LCD_DisplayStringLine(40,str);
+      
   if(p1_hp == 2){
     LCD_DrawArray(pic_hp_70_bmp, 10, 310 , 52, 9);
   }
@@ -689,6 +694,10 @@ void gameStatus(){
   }
   else if(p1_hp == 0){
     LCD_DrawArray(pic_hp_0_bmp, 10, 310 , 52, 9);
+    sprintf(str3 ,"2P WIN");
+    
+    LCD_DisplayStringLine(60,str3);
+    while(1);
   }
   
   if(p2_hp == 2){
@@ -699,12 +708,14 @@ void gameStatus(){
   }
   else if(p2_hp == 0){
     LCD_DrawArray(pic_hp_0_bmp, 10, 70 , 52, 9);
+    sprintf(str3 ,"1P WIN");
+    
+    LCD_DisplayStringLine(60,str3);
+    while(1);
+    
   }
   
-      LCD_DrawArray(pic_tank_2_bmp, x_pos_2p, y_pos_2p, 40, 36);
-      LCD_DrawArray(pic_tank_1_bmp, x_pos, y_pos, 40, 36);
       
-      LCD_DisplayStringLine(40,str);
   
 }
 
